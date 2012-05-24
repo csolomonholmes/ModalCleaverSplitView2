@@ -126,7 +126,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 3;
 }
 
 
@@ -145,6 +145,7 @@
     navList = [[NSArray alloc] initWithObjects:
                @"index.html",
                @"How to use Cleaver",///correspondes to @"Cordova" in the array below
+               @"MrImageProc/index",
                nil];
 
 
@@ -167,6 +168,7 @@ if (IS_IPAD)
     navList = [[NSArray alloc] initWithObjects:
                @"index",
                @"Cordova",
+               @"MrImageProc/index",
                nil];
     
 
@@ -209,6 +211,7 @@ button.frame = CGRectMake(x, y, 85.0, 35.0);
         navList = [[NSArray alloc] initWithObjects:
                    @"index",
                    @"Cordova",
+                   @"MrImageProc/index",
                    nil];
         
 
