@@ -45,7 +45,37 @@
 + (id) controller
 {
     DetailViewController *controller = [[DetailViewController alloc] init];
-    controller.view.backgroundColor = [UIColor colorWithRed:0.757 green:0.757 blue:0.757 alpha:1.000];
+    controller.view.backgroundColor = CORDOVA_GRAY_COLOR;
+    
+    CDVViewController* cleaverViewController = [CDVViewController new];
+    
+    controller.view.autoresizesSubviews = YES;
+    cleaverViewController.wwwFolderName = @"www";
+    cleaverViewController.startPage = @"index.html";
+    
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button addTarget:self
+               action:@selector(closeCleaverView:)
+     forControlEvents:UIControlEventTouchUpInside];
+    
+    [button setTitle:@"Close"
+            forState:UIControlStateNormal];
+    int x = [UIScreen mainScreen].bounds.size.width * 0.885;
+    int y = [UIScreen mainScreen].bounds.size.height * 0.004;
+    button.frame = CGRectMake(x, y, 85.0, 35.0);
+    
+    
+    //[cleaverViewController.view addSubview:button];
+    
+    
+    
+    [controller.view addSubview:cleaverViewController.view];
+    [controller.view bringSubviewToFront:cleaverViewController.view];
+ 
+    
+    
+    
     return controller;
 }
 
@@ -81,14 +111,9 @@
 + (id) controller
 {
     
-//self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(x, y, width, height) style:UITableViewStylePlain];
-    
     ColorViewController *controller = [[ColorViewController alloc] init];
     NSLog(@"%f",controller.view.frame.size.width);
     controller.title = @"NativeNav";
-    
-    //CGRect tvframe = CGRectMake(200,200,200,200);
-    //controller.tableView.frame = tvframe;
     return controller;
 }
 
@@ -116,10 +141,6 @@
    
     if (!cell) cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"generic"];
 
-    //CGRect tvframe = CGRectMake(200,200,200,200);
-    //cell.frame = tvframe;
-   // if (indexPath.row) {
-
     NSArray *navList;
     navList = [[NSArray alloc] initWithObjects:
                @"index",
@@ -129,16 +150,7 @@
 
 
     cell.textLabel.text = [NSString stringWithFormat:@"%@", [navList objectAtIndex:indexPath.row]];
-    //cell.textLabel.textColor = [UIColor colorWithWhite:(indexPath.row / 10.0f) alpha:1.0f];
     cell.accessoryType = IS_IPAD ? UITableViewCellAccessoryNone : UITableViewCellAccessoryDisclosureIndicator;
-
-
-    //}
-
-
-
-
-
 
     return cell;
 }
@@ -159,19 +171,15 @@ if (IS_IPAD)
     
 
 UIViewController *controller = (UIViewController *)self.splitViewController.delegate;
-controller.view.backgroundColor = [UIColor colorWithRed:0.757 green:0.757 blue:0.757 alpha:1.000];//cell.textLabel.textColor;
 
 CDVViewController* cleaverViewController = [CDVViewController new];
 
 controller.view.autoresizesSubviews = YES;
-//cleaverViewController.wwwFolderName = [NSString stringWithFormat:@"www/%@", [navList objectAtIndex:indexPath.row]];
 cleaverViewController.wwwFolderName = @"www";
-//cleaverViewController.startPage = @"index.html";
 cleaverViewController.startPage = [NSString stringWithFormat:@"%@.html", [navList objectAtIndex:indexPath.row]];
     
 NSLog(@"cleaverViewController.startPage = %@",cleaverViewController.startPage);
 
-//cleaverViewController.modalPresentationStyle = controller.modalPresentationStyle;
 
 UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 [button addTarget:self
@@ -180,46 +188,17 @@ forControlEvents:UIControlEventTouchUpInside];
 
 [button setTitle:@"Close"
 forState:UIControlStateNormal];
-/*
-button.autoresizingMask = ( UIViewAutoresizingFlexibleWidth |
-               UIViewAutoresizingFlexibleLeftMargin |
-               UIViewAutoresizingFlexibleRightMargin |
-               UIViewAutoresizingFlexibleBottomMargin );
-
-*/
-if (IS_IPAD)
-{
 int x = [UIScreen mainScreen].bounds.size.width * 0.885;
 int y = [UIScreen mainScreen].bounds.size.height * 0.004;
 button.frame = CGRectMake(x, y, 85.0, 35.0);
-}
-
-else
-{
-
-int x = [UIScreen mainScreen].bounds.size.width * 0.775;
-int y = [UIScreen mainScreen].bounds.size.height * 0.010;
-button.frame = CGRectMake(x, y, 70.0, 35.0);
-}
 
 
 //[cleaverViewController.view addSubview:button];
 
 
 
-        //cleaverViewController.view.bounds = controller.view.bounds;
-        cleaverViewController.view.backgroundColor = [UIColor colorWithRed:0.757 green:0.757 blue:0.757 alpha:1.000];
-       [controller.view addSubview:cleaverViewController.view];
+        [controller.view addSubview:cleaverViewController.view];
         [controller.view bringSubviewToFront:cleaverViewController.view];
-
-        NSLog(@"x %f",controller.view.center.x);
-        NSLog(@"y %f",controller.view.center.y);
-
-        NSLog(@"y %f",cleaverViewController.view.center.x);
-        NSLog(@"y %f",cleaverViewController.view.center.y);
-
-        //[controller.view layoutSubviews];
-
 
 
     }
@@ -236,11 +215,8 @@ button.frame = CGRectMake(x, y, 70.0, 35.0);
 
         DetailViewController *controller = [DetailViewController controller];
 
-        controller.view.backgroundColor = [UIColor colorWithRed:0.757 green:0.757 blue:0.757 alpha:1.000];//cell.textLabel.textColor;
+        //controller.view.backgroundColor = [UIColor colorWithRed:0.757 green:0.757 blue:0.757 alpha:1.000];//cell.textLabel.textColor;
 
-        // if (styleSegment == 3)
-        //{
-        // NSLog(@"TRUE styleSegment = %i",styleSegment);
         CDVViewController* cleaverViewController = [CDVViewController new];
         
         controller.view.autoresizesSubviews = YES;
@@ -251,8 +227,6 @@ button.frame = CGRectMake(x, y, 70.0, 35.0);
         
         NSLog(@"cleaverViewController.startPage = %@",cleaverViewController.startPage);
         
-        //cleaverViewController.modalPresentationStyle = controller.modalPresentationStyle;
-        
         UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [button addTarget:self
                    action:@selector(closeCleaverView:)
@@ -260,66 +234,27 @@ button.frame = CGRectMake(x, y, 70.0, 35.0);
         
         [button setTitle:@"Close"
                 forState:UIControlStateNormal];
-        /*
-         button.autoresizingMask = ( UIViewAutoresizingFlexibleWidth |
-         UIViewAutoresizingFlexibleLeftMargin |
-         UIViewAutoresizingFlexibleRightMargin |
-         UIViewAutoresizingFlexibleBottomMargin );
-         
-         */
-        if (IS_IPAD)
-        {
-            int x = [UIScreen mainScreen].bounds.size.width * 0.885;
-            int y = [UIScreen mainScreen].bounds.size.height * 0.004;
-            button.frame = CGRectMake(x, y, 85.0, 35.0);
-        }
-        
-        else
-        {
-            
+           
             int x = [UIScreen mainScreen].bounds.size.width * 0.775;
             int y = [UIScreen mainScreen].bounds.size.height * 0.010;
             button.frame = CGRectMake(x, y, 70.0, 35.0);
-        }
         
         
         
         //[cleaverViewController.view addSubview:button];
         
-        
         [controller.view addSubview:cleaverViewController.view];
 
-        //cleaverViewController.view.bounds = controller.view.bounds;
-        cleaverViewController.view.backgroundColor = [UIColor colorWithRed:0.757 green:0.757 blue:0.757 alpha:1.000];
-
-        //controller.view.backgroundColor = cell.textLabel.textColor;
-        
         [self.navigationController pushViewController:controller animated:YES];
     }
-    else {
-        //
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    else 
+    {}
 
 
     if (IS_IPAD) {}
     else
     if (!IS_IPAD) {}
     else {}
-
 
 
 
@@ -347,6 +282,7 @@ button.frame = CGRectMake(x, y, 70.0, 35.0);
 
 @implementation TestBedAppDelegate
 
+
 - (UISplitViewController *) splitviewController
 {
     // Create the navigation-run root view
@@ -372,7 +308,6 @@ button.frame = CGRectMake(x, y, 70.0, 35.0);
     ColorViewController *colorViewController = [ColorViewController controller];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:colorViewController];
     nav.navigationBar.tintColor = CORDOVA_GRAY_COLOR;
-
     return nav;
 }
 
@@ -381,17 +316,18 @@ button.frame = CGRectMake(x, y, 70.0, 35.0);
 {
     [application setStatusBarHidden:YES];
     window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    window.backgroundColor = [UIColor colorWithRed:0.757 green:0.757 blue:0.757 alpha:1.000];
+    //window.backgroundColor = [UIColor colorWithRed:0.757 green:0.757 blue:0.757 alpha:1.000];
     if (IS_IPAD)
     {
-        [self splitviewController].view.frame = CGRectMake(10.0, 10.00, 10.0, 10.0);
+
         window.rootViewController = [self splitviewController];
-    //window.rootViewController.view.frame = CGRectMake(100.0, 100.00, 100.0, 100.0);
+    
     }
     
     if (!IS_IPAD){
         window.rootViewController = [self navWithColorViewController];
     }
+    
     [window makeKeyAndVisible];
     return YES;
 }

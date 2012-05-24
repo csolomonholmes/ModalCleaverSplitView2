@@ -23,8 +23,8 @@
 //  Copyright OpenOSX.org 2012. All rights reserved.
 //
 
-    #import <Cordova/CDVViewController.h>
+#import <Cordova/CDVViewController.h>
 
-@interface cleaverViewController : CDVViewController <UIPopoverControllerDelegate, UISplitViewControllerDelegate>
+@interface cleaverViewController : CDVViewController <UISplitViewControllerDelegate, UIPopoverControllerDelegate,UINavigationControllerDelegate>
 
 @end
