@@ -4,7 +4,7 @@
   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="ModalCleaverSplitView2 : Cordova Cleaver Usage Example" />
+    <meta name="description" content="WikiCleaverView : Leverage Wikipedia like a PhoneGap plugin." />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
@@ -19,7 +19,7 @@
           <a id="forkme_banner" href="https://github.com/RandyMcMillan/ModalCleaverSplitView2">View on GitHub</a>
 
           <h1 id="project_title">ModalCleaverSplitView2</h1>
-          <h2 id="project_tagline">Cordova Cleaver Usage Example</h2>
+          <h2 id="project_tagline">Cordova Cleaver Usage Demo.</h2>
 
             <section id="downloads">
               <a class="zip_download_link" href="https://github.com/RandyMcMillan/ModalCleaverSplitView2/zipball/master">Download this project as a .zip file</a>
@@ -31,39 +31,49 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>Welcome to GitHub Pages.</h3>
+        <p>The application of this concept extends the possibilities for a Cordova (iOS) app.</p>
+        <p>By making a Cordova (iOS) "a little less hybrid" alot of possibilities arise that a standard implementation of Cordova (iOS) in a single webview doesn't allow.</p>
+        <p>Of coarse using this method to build a PhoneGap app has a couple drawbacks. The first being, the app in this state losses cross platform compatibility because more UI elements are dependent on native classes. Second, a better understanding of obj-C is needed.</p>
+        <p>If you can live with that then this method is something that should be investigated.</p>
+        <p>After building several examples using this method i've concluded that there are several benefits that ought to be emphasized.</p>
+        <p>First, by using multiple webViews, each instance of your html5 UI is slimmer. This avoids a common issue when using larger js libraries to drive the app UI. In the past I've used Sencha Touch to create my UI elements and have found that loading a Sencha Touch app into a single webview seriously detracts from the overall user experience due to slower initial load time, sluggish handling of embedded images, etc...</p>
+        <br><p>more to come...</p>
+        <p>This project is dependent on CordovaLib and was written using Xcode 4.3.2 and Cordova 1.7.0 and targets iOS 5.1</center></p>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p><img src="https://github.com/RandyMcMillan/ModalCleaverSplitView2/raw/master/wikiform.png" alt="image"><img src="https://github.com/RandyMcMillan/ModalCleaverSplitView2/raw/master/page.png" alt="image">
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+Checkout some of my other experiments on Github.com
+<br>
+<br>
 
-<h3>Designer Templates</h3>
+<a href="https://github.com/RandyMcMillan/ModalCleaverSplitView2">https://github.com/RandyMcMillan/ModalCleaverSplitView2</a><br>
+<a href="https://github.com/RandyMcMillan/ModalCleaverSplitView">https://github.com/RandyMcMillan/ModalCleaverSplitView</a><br>
+<a href="https://github.com/RandyMcMillan/ModalCleaverView4">https://github.com/RandyMcMillan/ModalCleaverView4</a><br>
+<a href="https://github.com/RandyMcMillan/ModalCleaverView3">https://github.com/RandyMcMillan/ModalCleaverView3</a><br>
+<a href="https://github.com/RandyMcMillan/ModalCleaverView2">https://github.com/RandyMcMillan/ModalCleaverView2</a><br>
+<a href="https://github.com/RandyMcMillan/ModalCleaverView">https://github.com/RandyMcMillan/ModalCleaverView</a><br>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
 
-<h3>Rather Drive Stick?</h3>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
 
-<h3>Authors and Contributors</h3>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p>The MIT License</p>
 
-<h3>Support or Contact</h3>
+<p>Copyright © Randy McMillan 2012</p>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
       </section>
     </div>
 
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        <p class="copyright">ModalCleaverSplitView2 maintained by <a href="https://github.com/RandyMcMillan">RandyMcMillan</a></p>
+        <p class="copyright">WikiCleaverView maintained by <a href="https://github.com/RandyMcMillan">RandyMcMillan</a></p>
         <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
