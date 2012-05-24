@@ -51,7 +51,7 @@
     
     controller.view.autoresizesSubviews = YES;
     cleaverViewController.wwwFolderName = @"www";
-    cleaverViewController.startPage = @"index.html";
+    cleaverViewController.startPage = @"Welcome.html";
     
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -143,7 +143,7 @@
 
     NSArray *navList;
     navList = [[NSArray alloc] initWithObjects:
-               @"index",
+               @"index.html",
                @"How to use Cleaver",///correspondes to @"Cordova" in the array below
                nil];
 
