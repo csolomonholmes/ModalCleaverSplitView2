@@ -48,7 +48,6 @@
     controller.view.backgroundColor = CORDOVA_GRAY_COLOR;
     
     CDVViewController* cleaverViewController = [CDVViewController new];
-    
     controller.view.autoresizesSubviews = YES;
     cleaverViewController.wwwFolderName = @"www";
     cleaverViewController.startPage = @"Welcome.html";
@@ -68,7 +67,8 @@
     
     //[cleaverViewController.view addSubview:button];
     
-    
+       cleaverViewController.view.frame = controller.view.bounds;  
+ 
     
     [controller.view addSubview:cleaverViewController.view];
     [controller.view bringSubviewToFront:cleaverViewController.view];
@@ -84,6 +84,7 @@
 {
     barButtonItem.title = aViewController.title;
     self.navigationItem.leftBarButtonItem = barButtonItem;
+    
     self.popoverController = aPopoverController;
 }
 
@@ -176,6 +177,7 @@ UIViewController *controller = (UIViewController *)self.splitViewController.dele
 
 CDVViewController* cleaverViewController = [CDVViewController new];
 
+    
 controller.view.autoresizesSubviews = YES;
 cleaverViewController.wwwFolderName = @"www";
 cleaverViewController.startPage = [NSString stringWithFormat:@"%@.html", [navList objectAtIndex:indexPath.row]];
@@ -197,6 +199,7 @@ button.frame = CGRectMake(x, y, 85.0, 35.0);
 
 //[cleaverViewController.view addSubview:button];
 
+    cleaverViewController.view.frame = controller.view.bounds; 
 
 
         [controller.view addSubview:cleaverViewController.view];
@@ -288,6 +291,15 @@ button.frame = CGRectMake(x, y, 85.0, 35.0);
 
 - (UISplitViewController *) splitviewController
 {
+    
+    
+    
+    /////work on resizing!!!
+    
+    
+    
+    
+    
     // Create the navigation-run root view
     ColorViewController *rootVC = [ColorViewController controller];
     UINavigationController *rootNav = [[UINavigationController alloc] initWithRootViewController:rootVC];
